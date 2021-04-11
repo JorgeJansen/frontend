@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-5">
+      <div>Saldo em conta: {{userPosition.checkingAccountAmount | currency: 'BRL'}}</div>
+      <div>Patrimônio: {{userPosition.consolidated | currency: 'BRL'}}</div>
+    </div>
+    <div class="table-shadow table-hover col-12">
+      <table class="regular" aria-label="">
+        <thead>
+          <tr>
+            <th scope="col">Ativo</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Valor</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="
+            let item of userPosition.positions
+              | paginate: { itemsPerPage: 5, currentPage: page };
+            let i = index
+          ">
+            <td data-label="Ativo">{{ item.symbol }}</td>
+            <td data-label="Quantidade">{{ item.amount }}</td>
+            <td data-label="Valor">{{ item.currentPrice | currency: 'BRL' }}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="col-12 mt-3">
+        <pagination-controls class="custom-pagination" (pageChange)="pageChanged($event)" [maxSize]="10"
+          [responsive]="true" [autoHide]="true">
+        </pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>
