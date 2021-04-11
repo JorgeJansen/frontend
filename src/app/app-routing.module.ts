@@ -14,6 +14,7 @@ const routes: Routes = [
     component: LoginComponent,
   },
   { path: NavRouterLinks.MODULE.POSITIONS, loadChildren: () => import('./positions/positions.module').then(m => m.PositionsModule) },
+  { path: NavRouterLinks.MODULE.ASSETS, loadChildren: () => import('./assets/assets.module').then(m => m.AssetsModule) },
   // redirect page error
   { path: '**', redirectTo: '' },
 ];

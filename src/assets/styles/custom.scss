@@ -1,6 +1,6 @@
-@import "variables.scss";
+@import "./variables.scss";
 @import "bootstrap";
-@import "fonts.scss";
+@import "./fonts.scss";
 
 @function em($pixels, $context: $browser-context) {
   @return ($pixels / $context) * 1em;
