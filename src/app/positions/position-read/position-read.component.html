@@ -1,8 +1,10 @@
 <div class="container mt-lg-2 mt-5">
   <div class="row">
-    <div class="col-12 mt-5">
-      <div>Saldo em conta: {{userPosition.checkingAccountAmount | currency: 'BRL'}}</div>
-      <div>Patrimônio: {{userPosition.consolidated | currency: 'BRL'}}</div>
+    <div class="col-12 d-flex justify-content-center">
+      <p class="f-20 text-primary">Saldo em conta: <strong>{{userPosition.checkingAccountAmount | currency: 'BRL'}}</strong></p>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+      <p class="f-20 text-primary">Patrimônio: <strong>{{userPosition.consolidated | currency: 'BRL'}}</strong></p>
     </div>
     <div class="table-shadow table-hover col-12">
       <table class="regular" aria-label="">

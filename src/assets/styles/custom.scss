@@ -149,9 +149,9 @@ body {
     -webkit-mask: url(/assets/images/assets.svg) no-repeat center / contain;
     height: 2.5rem; /*or your image's height*/
   }
-  &.sales {
-    mask: url(/assets/images/sales.svg) no-repeat center / contain;
-    -webkit-mask: url(/assets/images/sales.svg) no-repeat center / contain;
+  &.buy-asset {
+    mask: url(/assets/images/buy-asset.svg) no-repeat center / contain;
+    -webkit-mask: url(/assets/images/buy-asset.svg) no-repeat center / contain;
     height: 2.5rem; /*or your image's height*/
   }
   &.logout {

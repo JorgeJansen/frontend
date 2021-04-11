@@ -23,4 +23,20 @@ export class PositionsService {
       })
       .catch(err => this.errorHandler(err))
   }
+
+  savePosition(inBody) {
+    return this.http.post(`${environment.baseUrl}/userPosition`, inBody).toPromise()
+    .then(res => {
+      return res
+    })
+    .catch(err => this.errorHandler(err))
+  }
+
+  updatePosition(inBody) {
+    return this.http.put(`${environment.baseUrl}/userPosition`, inBody).toPromise()
+    .then(res => {
+      return res
+    })
+    .catch(err => this.errorHandler(err))
+  }
 }

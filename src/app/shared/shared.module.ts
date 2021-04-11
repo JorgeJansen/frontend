@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InvalidFeedbackComponent } from '../components/invalid-feedback/invalid-feedback.component';
 import { CustomLoaderComponent } from '../components/custom-loader/custom-loader.component';
+import { NgxMaskModule } from 'ngx-mask';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderComponent } from '../templates/header/header.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -16,6 +17,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
   imports: [
     CommonModule,
     FormsModule,
+    NgxMaskModule.forRoot(),
     NgxPaginationModule,
     ReactiveFormsModule,
     TooltipModule.forRoot()
@@ -24,6 +26,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     FormsModule,
     HeaderComponent,
     InvalidFeedbackComponent,
+    NgxMaskModule,
     NgxPaginationModule,
     ReactiveFormsModule,
     TooltipModule

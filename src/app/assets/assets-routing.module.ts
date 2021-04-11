@@ -16,10 +16,10 @@ const routes: Routes = [
       },
       {
         path: NavRouterLinks.PAGE.BUY,
-        component: AssetsReadComponent
+        component: AssetBuyComponent
       },
       {
-        path: `${NavRouterLinks.PAGE.BUY}/:asset`,
+        path: `${NavRouterLinks.PAGE.BUY}/:symbol`,
         component: AssetBuyComponent
       }
     ]

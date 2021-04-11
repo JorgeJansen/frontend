@@ -32,6 +32,6 @@ export class AssetsReadComponent implements OnInit {
   }
 
   buyAsset(item) {
-    this.router.navigate([NavRouterLinks.NAV])
+    this.router.navigate([NavRouterLinks.NAV.BUY_ASSET, item.symbol])
   }
 }
