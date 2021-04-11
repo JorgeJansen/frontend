@@ -1,7 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './authentication/login/login.component';
+import { NavRouterLinks } from './shared/commons/NavRouterLinks';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: NavRouterLinks.PAGE.LOGIN,
+    pathMatch: 'full',
+  },
+  {
+    path: NavRouterLinks.PAGE.LOGIN,
+    component: LoginComponent,
+  },
+  // redirect page error
+  { path: '**', redirectTo: '' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

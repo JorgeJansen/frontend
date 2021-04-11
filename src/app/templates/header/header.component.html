@@ -1,0 +1,18 @@
+<button type="button" class="btn btn-menu bold" [ngClass]="{ active: showMenu }"
+  (click)="showMenu = !showMenu"></button>
+<ul class="nav flex-column f-22 vh-100" [ngClass]="{ active: showMenu }">
+  <section class="mx-auto" *ngIf="itensMenu">
+    <li class="nav-item" *ngFor="let item of itensMenu">
+      <a id="cor" class="nav-link text-white" (click)="redirectTo(item.local)">
+        <span class="text">{{item.name}}</span>
+        <span class="icon {{item.icon}} bg-white" [tooltip]="item.name" placement="right"></span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a id="cor" class="nav-link text-white border-0" href="#">
+        <span class="text">Sair</span>
+        <span class="icon logout bg-white" tooltip="Sair" placement="right"></span>
+      </a>
+    </li>
+  </section>
+</ul>
