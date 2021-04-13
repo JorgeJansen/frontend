@@ -7,12 +7,14 @@ import { NgxMaskModule } from 'ngx-mask';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderComponent } from '../templates/header/header.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { OnlyNumberDirective } from './directive/OnlyNumber';
 
 @NgModule({
   declarations: [
     CustomLoaderComponent,
     HeaderComponent,
-    InvalidFeedbackComponent
+    InvalidFeedbackComponent,
+    OnlyNumberDirective
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     InvalidFeedbackComponent,
     NgxMaskModule,
     NgxPaginationModule,
+    OnlyNumberDirective,
     ReactiveFormsModule,
     TooltipModule
   ],

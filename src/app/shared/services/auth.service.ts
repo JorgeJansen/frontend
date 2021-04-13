@@ -12,12 +12,23 @@ export class AuthService {
     private dialogService: DialogService) { }
 
   private errorHandler(e: any) {
-    this.dialogService.showSnackBar('error', e.statusText)
+    if (e.status == undefined)
+      this.dialogService.showSnackBar('error', 'Usuário ou senha inválidos')
+    else
+      this.dialogService.showSnackBar('error', e.statusText)
+
     return Promise.reject(e.statusText)
   }
 
   login(inBody) {
-    return this.http.get(`${environment.baseUrl}/users?admin=${inBody.login}&password=${inBody.password}`).toPromise()
+    let params = {}
+    const regex = new RegExp(/^[[0-9]+$/g);
+    if (String(inBody.login).match(regex) && inBody.login.length == 11)
+      params = `cpf=${inBody.login}&password=${inBody.password}`
+    else
+      params = `email=${inBody.login}&password=${inBody.password}`
+
+    return this.http.get(`${environment.baseUrl}/users?${params}`).toPromise()
       .then(res => {
         return res[0].token
       })

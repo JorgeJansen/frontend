@@ -22,11 +22,11 @@ export class InvalidFeedbackComponent {
     } else if (field.errors?.invalidDate || field.errors?.bsDate) {
       this.msgError = 'Data inválida.'
     } else if (field.errors?.pattern) {
-      this.msgError = `${this.name} inválido.`
+      this.msgError = `${this.name} inválido(a).`
     } else if (field.errors?.invalid) {
-      this.msgError = `${this.name} inválido.`
+      this.msgError = `${this.name} inválido(a).`
     } else if (field.errors?.['Mask error'] || field.errors?.mask) {
-      this.msgError = `${this.name} inválido.`
+      this.msgError = `${this.name} inválido(a).`
     } else if (field.errors?.min) {
       this.msgError = `Valor mínimo ${field.errors.min.min}.`
     } else if (field.errors?.max) {
