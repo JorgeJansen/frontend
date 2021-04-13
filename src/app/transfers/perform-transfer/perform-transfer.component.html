@@ -1,0 +1,43 @@
+<div class="container mt-lg-2 mt-5">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <p class="f-20 bold text-primary">Tranferir</p>
+    </div>
+    <div class="col-12">
+      <p></p>
+    </div>
+    <form [formGroup]="formTransfer" class="row" autocomplete="off" novalidate>
+      <div class="form-group col-lg-6 col-md-12">
+        <label for="bank">Banco</label>
+        <select class="form-control" formControlName="bank">
+          <option value="" disabled>Selecione...</option>
+          <option [value]="item.code" *ngFor="let item of bankList">{{item.bank}}</option>
+        </select>
+        <invalid-feedback [field]="f.bank"></invalid-feedback>
+      </div>
+      <div class="form-group col-lg-6 col-md-12">
+        <label for="symbol">Conta</label>
+        <input type="text" OnlyNumber class="form-control" formControlName="account" (keyup)="padLeft($event, 'account')">
+        <invalid-feedback [field]="f.account" name="Conta"></invalid-feedback>
+      </div>
+      <div class="form-group col-lg-6 col-md-12">
+        <label for="symbol">Agência</label>
+        <input type="text" OnlyNumber class="form-control" formControlName="branch" (keyup)="padLeft($event, 'branch')">
+        <invalid-feedback [field]="f.branch" name="Agência"></invalid-feedback>
+      </div>
+      <div class="form-group col-lg-6 col-md-12">
+        <label for="symbol">Valor</label>
+        <input type="text" mask="separator.2" thousandSeparator="." class="form-control" formControlName="amount">
+        <invalid-feedback [field]="f.amount"></invalid-feedback>
+      </div>
+      <div class="row input-group mt-4 mx-0">
+        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+          <button type="button" class="btn btn-secondary btn-block" (click)="back()">VOLTAR</button>
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+          <button type="submit" class="btn btn-primary btn-block" (click)="transfer()">TRANSFERIR</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

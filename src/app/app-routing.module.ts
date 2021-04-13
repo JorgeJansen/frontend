@@ -15,6 +15,7 @@ const routes: Routes = [
   },
   { path: NavRouterLinks.MODULE.POSITIONS, loadChildren: () => import('./positions/positions.module').then(m => m.PositionsModule) },
   { path: NavRouterLinks.MODULE.ASSETS, loadChildren: () => import('./assets/assets.module').then(m => m.AssetsModule) },
+  { path: NavRouterLinks.MODULE.TRANSFERS, loadChildren: () => import('./transfers/transfers.module').then(m => m.TransfersModule) },
   // redirect page error
   { path: '**', redirectTo: '' },
 ];
